@@ -3,59 +3,127 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AIHub Demo</title>
+
+  <title>Business Network Uganda</title>
 
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
-      background: #f4f7fb;
+    }
+
+    body {
+      background: #f5f7fb;
       color: #172033;
     }
 
     header {
-      background: #123c69;
+      background: #102a43;
       color: white;
-      padding: 25px;
-      text-align: center;
-    }
-
-    .demo {
-      background: #fff3cd;
-      color: #664d03;
-      padding: 12px;
-      text-align: center;
-      font-weight: bold;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
       padding: 20px;
       text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 8px;
+    }
+
+    nav {
+      background: #0b1f33;
+      padding: 12px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 55px 20px;
+      text-align: center;
+      background: white;
+    }
+
+    .hero h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .buttons {
+      margin-top: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 20px;
+      margin: 5px;
+      border-radius: 7px;
+      text-decoration: none;
+      background: #1677ff;
+      color: white;
+    }
+
+    .btn.secondary {
+      background: #20a464;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
     }
 
     .card {
       background: white;
       padding: 25px;
-      margin: 20px 0;
-      border-radius: 15px;
+      border-radius: 12px;
       box-shadow: 0 3px 12px rgba(0,0,0,0.08);
     }
 
-    button {
-      background: #123c69;
+    .card h3 {
+      margin-bottom: 12px;
+      color: #102a43;
+    }
+
+    .card p {
+      line-height: 1.5;
+    }
+
+    .contact {
+      background: #102a43;
       color: white;
-      border: none;
-      padding: 14px 25px;
-      border-radius: 8px;
-      font-size: 16px;
+      text-align: center;
+      padding: 45px 20px;
     }
 
     footer {
+      background: #071522;
+      color: white;
       text-align: center;
-      padding: 30px;
-      color: #666;
+      padding: 20px;
+      font-size: 13px;
     }
   </style>
 </head>
@@ -63,38 +131,181 @@
 <body>
 
   <header>
-    <h1>AIHub Demo</h1>
-    <p>AI Technology Dashboard</p>
+    <h1>Business Network Uganda</h1>
+    <p>Connecting businesses, opportunities and financial services</p>
   </header>
 
-  <div class="demo">
-    DEMO / SIMULATION — No real money or investments
-  </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#loans">Loans</a>
+    <a href="#investment">Investment</a>
+    <a href="#advertising">Advertising</a>
+    <a href="#business">Businesses</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <div class="container">
+  <section class="hero" id="home">
+    <h2>Build. Invest. Grow.</h2>
 
-    <div class="card">
-      <h2>Welcome to AIHub Demo</h2>
-      <p>
-        This is a learning project demonstrating how an AI technology
-        dashboard could look.
-      </p>
-      <button>Demo Login</button>
+    <p>
+      A digital platform designed to connect businesses,
+      entrepreneurs, investors and customers in one network.
+    </p>
+
+    <div class="buttons">
+      <a class="btn" href="#business">Explore Businesses</a>
+      <a class="btn secondary" href="#contact">Join Network</a>
     </div>
+  </section>
 
-    <div class="card">
-      <h2>Demo Features</h2>
-      <p>📊 Dashboard</p>
-      <p>💰 Simulated Balance</p>
-      <p>📈 Simulated Earnings</p>
-      <p>👤 User Account</p>
+  <section class="section" id="loans">
+    <h2>Loan Services</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Business Loans</h3>
+        <p>
+          Information and applications for businesses seeking
+          financing to support growth and operations.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Personal Financing</h3>
+        <p>
+          Explore available financing options and requirements
+          through our platform.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Loan Information</h3>
+        <p>
+          Compare available financing information, eligibility
+          requirements and repayment terms.
+        </p>
+      </div>
+
     </div>
+  </section>
 
-  </div>
+  <section class="section" id="investment">
+    <h2>Investment Opportunities</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Investment Projects</h3>
+        <p>
+          Discover businesses and projects looking for investment
+          and partnerships.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Business Partnerships</h3>
+        <p>
+          Connect entrepreneurs with potential partners and
+          business opportunities.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Investor Network</h3>
+        <p>
+          Create a network where investors can discover
+          opportunities and communicate with businesses.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="advertising">
+    <h2>Advertising</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Promote Your Business</h3>
+        <p>
+          Businesses can advertise their products and services
+          to customers through the network.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Featured Businesses</h3>
+        <p>
+          Give businesses the opportunity to appear prominently
+          on the platform.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Digital Marketing</h3>
+        <p>
+          Help businesses reach new customers and build their
+          online presence.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="business">
+    <h2>Business Network</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>For Entrepreneurs</h3>
+        <p>
+          Create a business profile and connect with customers,
+          investors and partners.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>For Customers</h3>
+        <p>
+          Find businesses, products and services through one
+          online network.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>For Investors</h3>
+        <p>
+          Discover business opportunities and connect with
+          project owners.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Join Our Network</h2>
+
+    <p style="margin: 15px 0;">
+      Contact us to register your business, advertise or learn
+      about available services.
+    </p>
+
+    <a class="btn" href="mailto:info@example.com">
+      Contact Us
+    </a>
+  </section>
 
   <footer>
-    AIHub Demo © 2026
+    <p>© 2026 Business Network Uganda. All rights reserved.</p>
+    <p style="margin-top:8px;">
+      Financial and investment services are subject to applicable
+      laws, regulations and eligibility requirements.
+    </p>
   </footer>
 
 </body>
-    </html>
+  </html>
