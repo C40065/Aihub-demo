@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIHub Demo</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #172033;
+    }
+
+    header {
+      background: #123c69;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .demo {
+      background: #fff3cd;
+      color: #664d03;
+      padding: 12px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      margin: 20px 0;
+      border-radius: 15px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    button {
+      background: #123c69;
+      color: white;
+      border: none;
+      padding: 14px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>AIHub Demo</h1>
+    <p>AI Technology Dashboard</p>
+  </header>
+
+  <div class="demo">
+    DEMO / SIMULATION — No real money or investments
+  </div>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>Welcome to AIHub Demo</h2>
+      <p>
+        This is a learning project demonstrating how an AI technology
+        dashboard could look.
+      </p>
+      <button>Demo Login</button>
+    </div>
+
+    <div class="card">
+      <h2>Demo Features</h2>
+      <p>📊 Dashboard</p>
+      <p>💰 Simulated Balance</p>
+      <p>📈 Simulated Earnings</p>
+      <p>👤 User Account</p>
+    </div>
+
+  </div>
+
+  <footer>
+    AIHub Demo © 2026
+  </footer>
+
+</body>
+  </html>
