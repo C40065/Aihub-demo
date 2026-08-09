@@ -1,40 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Network Uganda</title>
 
-  <title>Business Network Uganda</title>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7f9;
+  color: #172033;
+  line-height: 1.6;
+}
 
-    body {
-      background: #f5f7fb;
-      color: #172033;
-    }
+header {
+  background: #0b3d2e;
+  color: white;
+  padding: 18px 6%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
 
-    header {
-      background: #102a43;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
 
-    header h1 {
-      margin-bottom: 8px;
-    }
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
 
-    nav {
-      background: #0b1f33;
-      padding: 12px;
-      text-align: center;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 7px;
+  font-size: 14px;
+}
+
+.hero {
+  background: linear-gradient(135deg, #0b3d2e, #146b4e);
+  color: white;
+  padding: 80px 6%;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 18px;
+}
+
+.buttons {
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 22px;
+  margin: 6px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  background: white;
+  color: #0b3d2e;
+}
+
+.btn.primary {
+  background: #f2c94c;
+  color: #172033;
+}
+
+section {
+  max-width: 1150px;
+  margin: auto;
+  padding: 55px 20px;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.08);
+}
+
+.card h3 {
+  color: #0b3d2e;
+  margin-bottom: 10px;
+}
+
+.icon {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.notice {
+  background: #fff8df;
+  border-left: 5px solid #f2c94c;
+  padding: 18px;
+  margin-top: 25px;
+  border-radius: 6px;
+}
+
+.contact {
+  background: #eaf3ef;
+  text-align: center;
+}
+
+.whatsapp {
+  display: inline-block;
+  background: #168a52;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 6px;
+}
+
+footer {
+  background: #172033;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+footer p {
+  margin: 7px;
+  font-size: 14px;
+}
+
+@media(max-width:700px) {
+  .nav {
+    flex-direction: column;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">Business Network Uganda</div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#investment">Investment</a>
+      <a href="#loans">Loans</a>
+      <a href="#equipment">Equipment</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <h1>Business Network Uganda</h1>
+
+  <p>
+    Connecting businesses, entrepreneurs, investors and customers
+    through digital business services and opportunities.
+  </p>
+
+  <div class="buttons">
+    <a class="btn primary" href="#services">Explore Services</a>
+    <a class="btn" href="#contact">Contact Us</a>
+  </div>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">💰</div>
+      <h3>Investment</h3>
+      <p>
+        Explore available investment opportunities and learn about
+        their terms, requirements and risks.
+      </p>
+    </div>
+
+    <<div class="card">
+      <div class="icon">💳</div>
+      <h3>Loans & Credit</h3>
+      <p>
+        Information about potential credit and lending services,
+        subject to eligibility, applicable laws and approval.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📢</div>
+      <h3>Advertising</h3>
+      <p>
+        Give businesses an opportunity to promote their products,
+        services and brands through our network.
+      </p>
+    </div>
+
+    <div class="card" id="equipment">
+      <div class="icon">🖥️</div>
+      <h3>Equipment Marketplace</h3>
+      <p>
+        Discover business and technology equipment that may be
+        available for purchase or enquiry.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="investment">
+  <h2>For Investors</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Investment Opportunities</h3>
+      <p>
+        Review opportunities published by the platform and understand
+        the associated terms before making any decision.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Business Network</h3>
+      <p>
+        Connect with businesses and project owners seeking legitimate
+        opportunities for growth.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Transparency</h3>
+      <p>
+        Important information, terms, risks and eligibility conditions
+        should be provided before any investment decision.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="notice">
+    <strong>Important:</strong>
+    Investment returns are not guaranteed. Any future investment
+    service will operate only after the appropriate legal and
+    regulatory requirements have been addressed.
+  </div>
+</section>
+
+<section id="loans">
+  <h2>Loans & Credit</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Loan Information</h3>
+      <p>
+        Learn about available loan products, eligibility requirements,
+        fees, repayment periods and applicable conditions.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Credit Assessment</h3>
+      <p>
+        A future secure system can assess applications while protecting
+        customers' personal information.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Repayment Management</h3>
+      <p>
+        Future customer accounts can provide repayment schedules,
+        payment records and account statements.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="equipment">
+  <h2>Technology & Equipment</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">⚙️</div>
+      <h3>Business Machines</h3>
+      <p>
+        Equipment listings can include specifications, availability,
+        pricing and purchase enquiries.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🖥️</div>
+      <h3>Computing Equipment</h3>
+      <p>
+        Technology products can be listed for businesses and
+        entrepreneurs.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏢</div>
+      <h3>Business Infrastructure</h3>
+      <p>
+        Future listings may include suitable infrastructure and
+        technology services.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Secure Platform</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>🔐 Data Protection</h3>
+      <p>
+        Customer information should be handled through secure systems
+        with appropriate access controls.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🛡️ Account Security</h3>
+      <p>
+        Future accounts can use secure authentication and additional
+        protection for administrator access.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>💾 Backup & Recovery</h3>
+      <p>
+        The future backend can use backups and failover infrastructure
+        to improve availability and recovery.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact Business Network Uganda</h2>
+
+  <p>
+    Contact us through WhatsApp for business enquiries and information.
+  </p>
+
+  <div class="buttons">
+    <a class="whatsapp"
+       href="https://wa.me/256747920618">
+       WhatsApp 1
+    </a>
+
+    <a class="whatsapp"
+       href="https://wa.me/256782068801">
+       WhatsApp 2
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Business Network Uganda</strong></p>
+
+  <p>
+    This website is a developing digital platform.
+    Services involving financial transactions will require
+    appropriate legal, regulatory and security arrangements.
+  </p>
+
+  <p>© 2026 Business Network Uganda. All rights reserved.</p>
+</footer>
+
+</body>
+  </html>    }
 
     nav a {
       color: white;
@@ -294,9 +681,15 @@
       about available services.
     </p>
 
-    <a class="btn" href="mailto:info@example.com">
-      Contact Us
-    </a>
+    <a class="btn" href="https://wa.me/256747920618" target="_blank">
+    WhatsApp 1
+</a>
+
+<a class="btn" href="https://wa.me/256782068801" target="_blank">
+    WhatsApp 2
+</a>
+    
+    
   </section>
 
   <footer>
