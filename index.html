@@ -811,58 +811,18 @@ footer p {
   </footer>
 
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+  const SUPABASE_URL = "https://tzahvffyabmmijvzznbv.supabase.co";
 
-    const registerForm = document.getElementById("registerForm");
-    const loginForm = document.getElementById("loginForm");
+const SUPABASE_PUBLISHABLE_KEY = "YOUR_PUBLISHABLE_KEY_HERE";
 
-    if (registerForm) {
-        registerForm.addEventListener("submit", function (event) {
-            event.preventDefault();
+const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+);
 
-            const name = registerForm.querySelector('input[type="text"]').value.trim();
-            const email = registerForm.querySelector('input[type="email"]').value.trim();
-            const phone = registerForm.querySelector('input[type="tel"]').value.trim();
-
-            if (!name || !email || !phone) {
-                alert("Please fill in all required fields.");
-                return;
-            }
-
-            localStorage.setItem("rauhcoUserName", name);
-            localStorage.setItem("rauhcoUserEmail", email);
-            localStorage.setItem("rauhcoUserPhone", phone);
-
-            alert("Account created successfully for " + name + ".");
-
-            registerForm.reset();
-        });
-    }
-
-    if (loginForm) {
-        loginForm.addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            const email = loginForm.querySelector('input[type="email"]').value.trim();
-
-            const savedEmail = localStorage.getItem("rauhcoUserEmail");
-            const savedName = localStorage.getItem("rauhcoUserName");
-
-            if (!savedEmail) {
-                alert("No account has been created on this device yet.");
-                return;
-            }
-
-            if (email === savedEmail) {
-                alert("Welcome back, " + savedName + "!");
-            } else {
-                alert("Email address not found.");
-            }
-        });
-    }
-
-});
+console.log("Supabase connected");
 </script>
 
 </body>
