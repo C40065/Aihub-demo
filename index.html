@@ -745,16 +745,19 @@ footer p {
   <div class="card">
   <h3>Customer Dashboard</h3>
 
-  <p><strong>Account Status:</strong> Future Customer Account</p>
+  <p><strong>Account Status:</strong> <span id="accountStatus">Not logged in</span></p>
+<p><strong>Name:</strong> <span id="accountName">-</span></p>
+<p><strong>Email:</strong> <span id="accountEmail">-</span></p>
+<p><strong>Phone:</strong> <span id="accountPhone">-</span></p>
 
   <div class="card">
     <h3>Investment Balance</h3>
-    <p>UGX 0</p>
+    <p id="investmentBalance">UGX 0</p>
   </div>
 
   <div class="card">
-    <h3>Available Balance</h3>
-    <p>UGX 0</p>
+    <h3>Available Balance</h3
+    <p id="availableBalance">UGX 0</p>                     
   </div>
 
   <div class="card">
@@ -870,9 +873,24 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
         return;
     }
 
-    alert("Login successful!");
-document.getElementById("account").scrollIntoView({ behavior: "smooth" });
+alert("Login successful!");
 
+const user = data.user;
+
+document.getElementById("accountStatus").textContent = "Logged in";
+
+document.getElementById("accountName").textContent =
+    user.user_metadata?.full_name || "-";
+
+document.getElementById("accountEmail").textContent =
+    user.email || "-";
+
+document.getElementById("accountPhone").textContent =
+    user.user_metadata?.phone || "-";
+
+document.getElementById("account").scrollIntoView({
+    behavior: "smooth"
+});
 });
 
   </script>
