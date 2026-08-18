@@ -850,6 +850,29 @@ document.getElementById("registerForm").addEventListener("submit", async functio
 
     alert("Account created successfully!");
 });
+    
+
+
+document.getElementById("loginForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const inputs = this.querySelectorAll("input");
+    const email = inputs[0].value;
+    const password = inputs[1].value;
+
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+        email: email,
+        password: password
+    });
+
+    if (error) {
+        alert("Login failed: " + error.message);
+        return;
+    }
+
+    alert("Login successful!");
+});
+
   </script>
 
 </body>
