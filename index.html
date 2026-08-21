@@ -1100,7 +1100,32 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
 alert("Login successful!");
 
 const user = data.user;
+const { data: account, error: accountError } = await supabaseClient
+  .from("customer_accounts")
+  .select("investment_balance, available_balance, total_deposits, total_withdrawals, loan_balance")
+  .eq("user_id", user.id)
+  .maybeSingle();
 
+if (accountError) {
+  console.error("Account data error:", accountError);
+} else if (account) {
+  document.getElementById("investmentBalance").textContent =
+    "UGX " + Number(account.investment_balance || 0).toLocaleString();
+
+  document.getElementById("availableBalance").textContent =
+    "UGX " + Number(account.available_balance || 0).toLocaleString();
+
+  document.getElementById("totalDeposits").textContent =
+    "UGX " + Number(account.total_deposits || 0).toLocaleString();
+
+  document.getElementById("totalWithdrawals").textContent =
+    "UGX " + Number(account.total_withdrawals || 0).toLocaleString();
+
+  document.getElementById("loanStatus").textContent =
+    Number(account.loan_balance || 0) > 0
+      ? "Active loan: UGX " + Number(account.loan_balance).toLocaleString()
+      : "No active loan";
+    }
 document.getElementById("accountStatus").textContent = "Logged in";
 
 document.getElementById("accountName").textContent =
