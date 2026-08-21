@@ -1041,19 +1041,31 @@ console.log("Supabase connected");
 document.getElementById("registerForm").addEventListener("submit", async function(e) {
     e.preventDefault();
 
-    const inputs = this.querySelectorAll("input");
-    const fullName = inputs[0].value;
-    const email = inputs[1].value;
-    const phone = inputs[2].value;
-    const password = inputs[3].value;
+  const inputs = this.querySelectorAll("input");
+const selects = this.querySelectorAll("select");
+
+const fullName = inputs[0].value;
+const email = inputs[1].value;
+const phone = inputs[2].value;
+const dateOfBirth = inputs[3].value;
+const yearOfBirth = inputs[4].value;
+const gender = selects[0].value;
+const country = selects[1].value;
+const password = inputs[5].value;
 
     const { data, error } = await supabaseClient.auth.signUp({
         email: email,
         password: password,
         options: {
-            data: {
-                full_name: fullName,
-                phone: phone
+      data: {
+    full_name: fullName,
+    phone: phone,
+    date_of_birth: dateOfBirth,
+    year_of_birth: yearOfBirth,
+    gender: gender,
+    country: country
+      }
+
             }
         }
     });
