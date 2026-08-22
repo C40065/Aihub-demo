@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rauhco Business Network - Customer Account</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 18px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 25px auto;
+      padding: 15px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    h2, h3 {
+      margin-top: 0;
+    }
+
+    input, select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px;
+      margin: 7px 0;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+      font-size: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 7px;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .logout {
+      background: #dc2626;
+    }
+
+    .logout:hover {
+      background: #b91c1c;
+    }
+
+    .dashboard {
+      display: none;
+    }
+
+    .message {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Rauhco Business Network</h1>
+  <p>Customer Account</p>
+</header>
+
+<main>
+
+  <!-- REGISTER -->
+  <div class="card" id="registerCard">
+    <h2>Create Your Account</h2>
+    <p>Register for a Rauhco Business Network customer account.</p>
+
+    <form id="registerForm">
+
+      <input
+        id="fullName"
+        type="text"
+        placeholder="Full Name"
+        required
+      >
+
+      <input
+        id="email"
+        type="email"
+        placeholder="Email Address"
+        required
+      >
+
+      <input
+        id="phone"
+        type="tel"
+        placeholder="Phone Number"
+        required
+      >
+
+      <input
+        id="dateOfBirth"
+        type="date"
+      >
+
+      <input
+        id="yearOfBirth"
+        type="number"
+        placeholder="Year of Birth"
+        min="1900"
+        max="2026"
+      >
+
+      <select id="gender" required>
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+
+      <input
+        id="country"
+        type="text"
+        placeholder="Country"
+        value="Uganda"
+        required
+      >
+
+      <input
+        id="password"
+        type="password"
+        placeholder="Create Password"
+        required
+      >
+
+      <button type="submit">Create Account</button>
+
+    </form>
+
+    <p id="registerMessage" class="message"></p>
+  </div>
+
+
+  <!-- LOGIN -->
+  <div class="card" id="loginCard">
+
+    <h2>Customer Login</h2>
+    <p>Access your private customer account.</p>
+
+    <form id="loginForm">
+
+      <input
+        id="loginEmail"
+        type="email"
+        placeholder="Email Address"
+        required
+      >
+
+      <input
+        id="loginPassword"
+        type="password"
+        placeholder="Password"
+        required
+      >
+
+      <button type="submit">Login</button>
+
+    </form>
+
+    <p id="loginMessage" class="message"></p>
+
+  </div>
+
+
+  <!-- PRIVATE DASHBOARD -->
+  <div class="dashboard" id="dashboard">
+
+    <div class="card">
+      <h2>Customer Dashboard</h2>
+
+      <p>
+        <strong>Account Status:</strong>
+        <span id="accountStatus">Active</span>
+      </p>
+
+      <p>
+        <strong>Name:</strong>
+        <span id="accountName">-</span>
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <span id="accountEmail">-</span>
+      </p>
+
+      <p>
+        <strong>Phone:</strong>
+        <span id="accountPhone">-</span>
+      </p>
+    </div>
+
+
+    <div class="card">
+      <h3>Investment Balance</h3>
+      <p id="investmentBalance">UGX 0</p>
+    </div>
+
+
+    <div class="card">
+      <h3>Available Balance</h3>
+      <p id="availableBalance">UGX 0</p>
+    </div>
+
+
+    <div class="card">
+      <h3>Total Deposits</h3>
+      <p id="totalDeposits">UGX 0</p>
+    </div>
+
+
+    <div class="card">
+      <h3>Total Withdrawals</h3>
+      <p id="totalWithdrawals">UGX 0</p>
+    </div>
+
+
+    <div class="card">
+      <h3>Loan Status</h3>
+      <p id="loanStatus">No active loan</p>
+    </div>
+
+
+    <div class="card">
+      <h3>Repayment Schedule</h3>
+      <p id="repaymentSchedule">No repayment schedule available.</p>
+    </div>
+
+
+    <div class="card">
+      <h3>Account Statement</h3>
+      <p>Your future transactions and account statements will appear here.</p>
+    </div>
+
+
+    <div class="card">
+      <button class="logout" id="logoutButton">Logout</button>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  © 2026 Rauhco Business Network.
+</footer>
+
+
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+  /*
+    IMPORTANT:
+    Replace ONLY these two values with the exact values
+    already used in your index.html.
+  */
+
+  const SUPABASE_URL = "PASTE_YOUR_EXISTING_SUPABASE_URL_HERE";
+
+  const SUPABASE_PUBLISHABLE_KEY =
+    "PASTE_YOUR_EXISTING_SUPABASE_PUBLISHABLE_KEY_HERE";
+
+
+  const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+  );
+
+
+  /* REGISTER */
+
+  document.getElementById("registerForm").addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    const fullName = document.getElementById("fullName").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const dateOfBirth = document.getElementById("dateOfBirth").value;
+    const yearOfBirth = document.getElementById("yearOfBirth").value;
+    const gender = document.getElementById("gender").value;
+    const country = document.getElementById("country").value;
+    const password = document.getElementById("password").value;
+
+    const { data, error } = await supabaseClient.auth.signUp({
+
+      email: email,
+
+      password: password,
+
+      options: {
+        data: {
+          full_name: fullName,
+          phone: phone,
+          date_of_birth: dateOfBirth,
+          year_of_birth: yearOfBirth,
+          gender: gender,
+          country: country
+        }
+      }
+
+    });
+
+
+    if (error) {
+
+      document.getElementById("registerMessage").textContent =
+        "Registration failed: " + error.message;
+
+      return;
+    }
+
+
+    document.getElementById("registerMessage").textContent =
+      "Account created successfully. Please check your email for verification.";
+
+    document.getElementById("registerForm").reset();
+
+  });
+
+
+  /* LOGIN */
+
+  document.getElementById("loginForm").addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
+
+
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+
+      email: email,
+      password: password
+
+    });
+
+
+    if (error) {
+
+      document.getElementById("loginMessage").textContent =
+        "Login failed: " + error.message;
+
+      return;
+    }
+
+
+    document.getElementById("loginMessage").textContent =
+      "Login successful.";
+
+    await loadDashboard();
+
+  });
+
+
+  /* LOAD CUSTOMER DASHBOARD */
+
+  async function loadDashboard() {
+
+    const {
+      data: sessionData
+    } = await supabaseClient.auth.getSession();
+
+
+    const user = sessionData.session?.user;
+
+
+    if (!user) {
+      return;
+    }
+
+
+    document.getElementById("registerCard").style.display = "none";
+    document.getElementById("loginCard").style.display = "none";
+    document.getElementById("dashboard").style.display = "block";
+
+
+    document.getElementById("accountName").textContent =
+      user.user_metadata?.full_name || "-";
+
+    document.getElementById("accountEmail").textContent =
+      user.email || "-";
+
+    document.getElementById("accountPhone").textContent =
+      user.user_metadata?.phone || "-";
+
+
+    const {
+      data: account,
+      error: accountError
+    } = await supabaseClient
+      .from("customer_accounts")
+      .select(
+        "investment_balance, available_balance, total_deposits, total_withdrawals, loan_balance"
+      )
+      .eq("user_id", user.id)
+      .maybeSingle();
+
+
+    if (accountError) {
+
+      console.error(
+        "Account data error:",
+        accountError
+      );
+
+      return;
+    }
+
+
+    if (account) {
+
+      document.getElementById("investmentBalance").textContent =
+        "UGX " + Number(account.investment_balance || 0).toLocaleString();
+
+      document.getElementById("availableBalance").textContent =
+        "UGX " + Number(account.available_balance || 0).toLocaleString();
+
+      document.getElementById("totalDeposits").textContent =
+        "UGX " + Number(account.total_deposits || 0).toLocaleString();
+
+      document.getElementById("totalWithdrawals").textContent =
+        "UGX " + Number(account.total_withdrawals || 0).toLocaleString();
+
+
+      if (Number(account.loan_balance || 0) > 0) {
+
+        document.getElementById("loanStatus").textContent =
+          "Active loan: UGX " +
+          Number(account.loan_balance).toLocaleString();
+
+      } else {
+
+        document.getElementById("loanStatus").textContent =
+          "No active loan";
+
+      }
+
+    }
+
+  }
+
+
+  /* LOGOUT */
+
+  document.getElementById("logoutButton").addEventListener("click", async function() {
+
+    await supabaseClient.auth.signOut();
+
+    document.getElementById("dashboard").style.display = "none";
+
+    document.getElementById("registerCard").style.display = "block";
+
+    document.getElementById("loginCard").style.display = "block";
+
+    document.getElementById("loginForm").reset();
+
+    document.getElementById("loginMessage").textContent = "";
+
+    window.location.href = "index.html";
+
+  });
+
+
+  /* CHECK EXISTING LOGIN */
+
+  loadDashboard();
+
+</script>
+
+</body>
+  </html>
