@@ -1024,63 +1024,75 @@ document.getElementById("account").scrollIntoView({
     menuToggle.addEventListener("click", function () {
         mainNav.classList.toggle("active");
     });
-    document.getElementById("businessProfileForm").addEventListener("submit",
-async function(e) {
-    e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
 
-    const { data: user, error: userError } =
-        await supabaseClient.auth.getUser();
+    const businessProfileForm =
+        document.getElementById("businessProfileForm");
 
-    if (userError || !user) {
-        alert("Please log in before saving your business profile.");
+    if (!businessProfileForm) {
+        console.error("businessProfileForm was not found.");
         return;
     }
 
-    const businessName =
-        document.getElementById("businessName").value.trim();
+    businessProfileForm.addEventListener("submit", async function (e) {
 
-    const businessCategory =
-        document.getElementById("businessCategory").value.trim();
+        e.preventDefault();
 
-    const businessDescription =
-        document.getElementById("businessDescription").value.trim();
+        alert("Save button is working!");
 
-    const businessLocation =
-        document.getElementById("businessLocation").value.trim();
+        const { data: user, error: userError } =
+            await supabaseClient.auth.getUser();
 
-    const businessPhone =
-        document.getElementById("businessPhone").value.trim();
+        if (userError || !user) {
+            alert("Please log in before saving your business profile.");
+            return;
+        }
 
-    const businessEmail =
-        document.getElementById("businessEmail").value.trim();
+        const businessName =
+            document.getElementById("businessName").value.trim();
 
-    const businessProducts =
-        document.getElementById("businessProducts").value.trim();
+        const businessCategory =
+            document.getElementById("businessCategory").value.trim();
 
-    const { error } = await supabaseClient
-        .from("business_profiles")
-        .upsert({
-            user_id: user.id,
-            business_name: businessName,
-            business_category: businessCategory,
-            business_description: businessDescription,
-            business_location: businessLocation,
-            business_phone: businessPhone,
-            business_email: businessEmail,
-            business_products: businessProducts
-        }, {
-            onConflict: "user_id"
-        });
+        const businessDescription =
+            document.getElementById("businessDescription").value.trim();
 
-    if (error) {
-        console.error("Business profile error:", error);
-        alert("Failed to save business profile: " + error.message);
-        return;
-    }
+        const businessLocation =
+            document.getElementById("businessLocation").value.trim();
 
-    alert("Business profile saved successfully!");
-});
-});
+        const businessPhone =
+            document.getElementById("businessPhone").value.trim();
+
+        const businessEmail =
+            document.getElementById("businessEmail").value.trim();
+
+        const businessProducts =
+            document.getElementById("businessProducts").value.trim();
+
+        const { error } = await supabaseClient
+            .from("business_profiles")
+            .upsert({
+                user_id: user.id,
+                business_name: businessName,
+                business_category: businessCategory,
+                business_description: businessDescription,
+                business_location: businessLocation,
+                business_phone: businessPhone,
+                business_email: businessEmail,
+                business_products: businessProducts
+            }, {
+                onConflict: "user_id"
+            });
+
+        if (error) {
+            console.error("Business profile error:", error);
+            alert("Failed to save business profile: " + error.message);
+            return;
+        }
+
+        alert("Business profile saved successfully!");
+
+    });
 
   </script>
 
