@@ -1024,10 +1024,11 @@ document.getElementById("account").scrollIntoView({
     menuToggle.addEventListener("click", function () {
         mainNav.classList.toggle("active");
     });
-    document.getElementById("businessProfileForm").addEventListener("submit", async function(e) {
+    document.getElementById("businessProfileForm").addEventListener("submit",
+async function(e) {
     e.preventDefault();
 
-    const { data: { user }, error: userError } =
+    const { data: user, error: userError } =
         await supabaseClient.auth.getUser();
 
     if (userError || !user) {
@@ -1078,6 +1079,7 @@ document.getElementById("account").scrollIntoView({
     }
 
     alert("Business profile saved successfully!");
+});
 });
 
   </script>
