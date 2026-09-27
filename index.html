@@ -1767,20 +1767,31 @@ function rauhcoAI(command) {
     return "Rauhco AI received your command: \"" + command + "\". Your command center is working. Full AI processing can be connected next.";
 }
 
+// ===============================
+// RAUHCO AI SEND CONTROL
+// ===============================
+
 if (aiSendBtn && aiCommandInput && aiResponse) {
 
     aiSendBtn.addEventListener("click", function () {
 
-        const command = aiCommandInput.value;
+        const command = aiCommandInput.value.trim();
 
-      const responseText = rauhcoAI(command);
+        if (!command) {
+            aiResponse.innerHTML =
+                "<b>Rauhco AI</b><p>Please say or type a command.</p>";
+            return;
+        }
 
-aiResponse.innerHTML =
-    "<b>Rauhco AI</b><p>" +
-    responseText +
-    "</p>";
+        const responseText = rauhcoAI(command);
 
-rauhcoSpeak(responseText);
+        aiResponse.innerHTML =
+            "<b>Rauhco AI</b><p>" + responseText + "</p>";
+
+        // Speak the response
+        if (typeof rauhcoSpeak === "function") {
+            rauhcoSpeak(responseText);
+        }
 
         aiCommandInput.value = "";
     });
@@ -1788,6 +1799,7 @@ rauhcoSpeak(responseText);
     aiCommandInput.addEventListener("keydown", function (event) {
 
         if (event.key === "Enter") {
+            event.preventDefault();
             aiSendBtn.click();
         }
 
