@@ -1353,6 +1353,7 @@ footer p {
                 placeholder="Ask anything or give a command..."
             >
             <button id="aiSendBtn">➤ Send</button>
+          <button id="aiVoiceBtn" type="button">🎤 Voice</button>
         </div>
 
         <div class="ai-status">
@@ -1795,28 +1796,9 @@ rauhcoSpeak(responseText);
   // ===============================
 // RAUHCO AI VOICE CONTROL
 // ===============================
+  
+const aiVoiceBtn = document.getElementById("aiVoiceBtn");
 
-const aiVoiceBtn = document.createElement("button");
-
-aiVoiceBtn.id = "aiVoiceBtn";
-aiVoiceBtn.type = "button";
-aiVoiceBtn.innerHTML = "🎤 Voice";
-
-aiVoiceBtn.style.marginLeft = "8px";
-aiVoiceBtn.style.padding = "0 18px";
-aiVoiceBtn.style.border = "0";
-aiVoiceBtn.style.borderRadius = "10px";
-aiVoiceBtn.style.background = "#10b981";
-aiVoiceBtn.style.color = "white";
-aiVoiceBtn.style.fontWeight = "bold";
-aiVoiceBtn.style.cursor = "pointer";
-
-if (aiSendBtn && aiCommandInput) {
-    aiSendBtn.parentNode.insertBefore(
-        aiVoiceBtn,
-        aiSendBtn.nextSibling
-    );
-}
 
 // Voice recognition
 const SpeechRecognition =
