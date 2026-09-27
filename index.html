@@ -219,6 +219,457 @@ footer p {
         padding: 8px 5px;
     }
   }
+
+  /* =========================================================
+   RAUHCO AI GLOBAL CONTROL CENTER
+   ========================================================= */
+
+.rauhco-ai-dashboard {
+    background: #050914;
+    color: #e8f7ff;
+    min-height: 900px;
+    padding: 18px;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.ai-topbar {
+    display: grid;
+    grid-template-columns: 260px 1fr 180px;
+    gap: 18px;
+    align-items: center;
+    background: #081221;
+    border: 1px solid #123a63;
+    border-radius: 14px;
+    padding: 12px;
+    box-shadow: 0 0 25px rgba(0, 150, 255, 0.15);
+}
+
+.ai-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ai-logo {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #092b55;
+    border: 2px solid #18d9ff;
+    color: #18d9ff;
+    font-size: 25px;
+    box-shadow: 0 0 18px rgba(24, 217, 255, 0.5);
+}
+
+.ai-brand h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 22px;
+}
+
+.ai-brand span {
+    color: #55dfff;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.ai-command {
+    display: flex;
+    gap: 8px;
+}
+
+.ai-command input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px;
+    border-radius: 10px;
+    border: 1px solid #1c659b;
+    background: #050b16;
+    color: white;
+    outline: none;
+}
+
+.ai-command input:focus {
+    border-color: #18d9ff;
+    box-shadow: 0 0 12px rgba(24, 217, 255, 0.25);
+}
+
+.ai-command button {
+    border: 0;
+    border-radius: 10px;
+    padding: 0 18px;
+    background: #086cff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.ai-command button:hover {
+    background: #18a8ff;
+}
+
+.ai-status {
+    text-align: center;
+    color: #57ff9b;
+    font-size: 13px;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #22ff88;
+    box-shadow: 0 0 10px #22ff88;
+    margin-right: 5px;
+}
+
+.ai-layout {
+    display: grid;
+    grid-template-columns: 205px 1fr;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.ai-sidebar {
+    background: #07101d;
+    border: 1px solid #123a63;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.ai-side-item {
+    width: 100%;
+    display: block;
+    text-align: left;
+    border: 1px solid transparent;
+    background: transparent;
+    color: #d8e8f5;
+    padding: 11px 9px;
+    margin-bottom: 4px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.ai-side-item:hover,
+.ai-side-item.active {
+    background: #0b3260;
+    border-color: #168cff;
+    color: white;
+    box-shadow: 0 0 12px rgba(0, 140, 255, 0.18);
+}
+
+.ai-main {
+    min-width: 0;
+}
+
+.ai-mode-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 7px;
+    margin-bottom: 12px;
+}
+
+.ai-mode {
+    min-height: 78px;
+    border: 1px solid #17446b;
+    border-radius: 9px;
+    color: white;
+    cursor: pointer;
+    padding: 8px 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    font-size: 19px;
+}
+
+.ai-mode b {
+    font-size: 11px;
+}
+
+.ai-mode small {
+    font-size: 8px;
+    color: #c4e7ff;
+}
+
+.ai-mode:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(0, 180, 255, 0.35);
+}
+
+.assistant { background: #0964db; }
+.research { background: #087d6e; }
+.deep { background: #5c18c9; }
+.agent { background: #e34d16; }
+.computer { background: #1167cf; }
+.business { background: #bd2457; }
+.finance { background: #07886c; }
+.database { background: #1489a6; }
+.website { background: #d00092; }
+.communication { background: #087bbd; }
+.creative { background: #d0098c; }
+.security { background: #0877bc; }
+.developer { background: #1648c2; }
+.more { background: #172d61; }
+
+.ai-panels {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    gap: 12px;
+}
+
+.ai-panel {
+    background: #07111f;
+    border: 1px solid #123a63;
+    border-radius: 12px;
+    padding: 13px;
+    box-shadow: inset 0 0 25px rgba(0, 110, 220, 0.04);
+}
+
+.panel-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.panel-title h2,
+.ai-panel h2 {
+    margin: 0;
+    color: #dff5ff;
+    font-size: 14px;
+}
+
+.live {
+    background: #54d629;
+    color: #041000;
+    padding: 3px 7px;
+    border-radius: 5px;
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.online {
+    color: #42ff8c;
+    font-size: 10px;
+}
+
+.world-placeholder {
+    min-height: 260px;
+    border: 1px solid #10477b;
+    border-radius: 10px;
+    background:
+        radial-gradient(circle at center, #123e6e 0, #06101e 58%, #030812 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    text-align: center;
+}
+
+.world-placeholder:first-line {
+    font-size: 80px;
+}
+
+.world-placeholder strong {
+    color: #5ce5ff;
+    font-size: 18px;
+}
+
+.world-placeholder span {
+    color: #8eabc0;
+    font-size: 11px;
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    margin-top: 8px;
+}
+
+.stats-row div {
+    background: #09192b;
+    border: 1px solid #123b60;
+    padding: 8px;
+    text-align: center;
+    border-radius: 7px;
+}
+
+.stats-row b {
+    display: block;
+    color: #54dfff;
+    font-size: 15px;
+}
+
+.stats-row small {
+    color: #91aec2;
+    font-size: 8px;
+}
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+}
+
+.status-grid div {
+    background: #09192b;
+    border: 1px solid #123b60;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.status-grid b {
+    display: block;
+    font-size: 10px;
+    color: #d9efff;
+    margin-top: 5px;
+}
+
+.status-grid span {
+    display: block;
+    color: #43ff93;
+    font-size: 9px;
+    margin-top: 3px;
+}
+
+.ai-lower-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.command-center {
+    min-height: 230px;
+}
+
+#aiResponse {
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 9px;
+    background: #101f55;
+    border: 1px solid #2547a0;
+    color: #dff4ff;
+    font-size: 12px;
+}
+
+#aiResponse p {
+    margin: 5px 0 0;
+    color: #9ec5dc;
+}
+
+.quick-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+}
+
+.quick-actions button {
+    border: 1px solid #175a91;
+    background: #0a2340;
+    color: #bcecff;
+    padding: 8px 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.quick-actions button:hover {
+    background: #0d4c82;
+}
+
+.agent-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 4px;
+    border-bottom: 1px solid #102a43;
+    color: #d9efff;
+    font-size: 11px;
+}
+
+.agent-row span {
+    color: #45ff92;
+    font-size: 9px;
+}
+
+.trends div {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 4px;
+    border-bottom: 1px solid #102a43;
+    font-size: 11px;
+}
+
+.trends strong {
+    color: #45ff92;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+
+    .ai-topbar {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+    }
+
+    .ai-mode-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ai-panels,
+    .ai-lower-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+
+    .rauhco-ai-dashboard {
+        padding: 7px;
+    }
+
+    .ai-mode-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ai-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-command {
+        flex-direction: column;
+    }
+
+    .ai-command button {
+        padding: 11px;
+    }
+}
 </style>
 </head>
 <body>
@@ -883,7 +1334,180 @@ footer p {
     
     
   </section>
+<!-- RAUHCO AI GLOBAL CONTROL CENTER -->
+<section id="rauhco-ai" class="rauhco-ai-dashboard">
 
+    <div class="ai-topbar">
+        <div class="ai-brand">
+            <div class="ai-logo">◈</div>
+            <div>
+                <h1>Rauhco AI</h1>
+                <span>GLOBAL CONTROL CENTER</span>
+            </div>
+        </div>
+
+        <div class="ai-command">
+            <input
+                id="aiCommandInput"
+                type="text"
+                placeholder="Ask anything or give a command..."
+            >
+            <button id="aiSendBtn">➤ Send</button>
+        </div>
+
+        <div class="ai-status">
+            <span class="status-dot"></span>
+            System Online
+        </div>
+    </div>
+
+    <div class="ai-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="ai-sidebar">
+
+            <button class="ai-side-item active">⌂ Dashboard</button>
+            <button class="ai-side-item">✚ AI Command Center</button>
+            <button class="ai-side-item">◎ Global Intelligence</button>
+            <button class="ai-side-item">⌕ Research Mode</button>
+            <button class="ai-side-item">◉ Deep Research</button>
+            <button class="ai-side-item">⚙ Agent Mode</button>
+            <button class="ai-side-item">▣ Computer Control</button>
+            <button class="ai-side-item">◌ Network Access</button>
+            <button class="ai-side-item">⌘ Developer Mode</button>
+            <button class="ai-side-item">▤ Business Manager</button>
+            <button class="ai-side-item">▥ Finance & Analytics</button>
+            <button class="ai-side-item">▦ Database Manager</button>
+            <button class="ai-side-item">▣ Website Manager</button>
+            <button class="ai-side-item">⚡ Automation Center</button>
+            <button class="ai-side-item">✉ Communication</button>
+            <button class="ai-side-item">✎ Creative Studio</button>
+            <button class="ai-side-item">◇ Security Center</button>
+
+        </aside>
+
+        <!-- MAIN AREA -->
+        <main class="ai-main">
+
+            <div class="ai-mode-grid">
+
+                <button class="ai-mode assistant">🤖<b>Assistant</b><small>Chat & Help</small></button>
+
+                <button class="ai-mode research">🔎<b>Research</b><small>Global Data</small></button>
+
+                <button class="ai-mode deep">🧠<b>Deep Research</b><small>Detailed Analysis</small></button>
+
+                <button class="ai-mode agent">⚙️<b>Agent Mode</b><small>Auto Tasks</small></button>
+
+                <button class="ai-mode computer">💻<b>Computer</b><small>Control Devices</small></button>
+
+                <button class="ai-mode business">💼<b>Business</b><small>Manage & Grow</small></button>
+
+                <button class="ai-mode finance">📊<b>Finance</b><small>Analytics & Reports</small></button>
+
+                <button class="ai-mode database">🗄️<b>Database</b><small>Data & Storage</small></button>
+
+                <button class="ai-mode website">🌐<b>Website</b><small>Manage Rauhco</small></button>
+
+                <button class="ai-mode communication">💬<b>Communication</b><small>Email & Chat</small></button>
+
+                <button class="ai-mode creative">🎨<b>Creative</b><small>Images & Content</small></button>
+
+                <button class="ai-mode security">🛡️<b>Security</b><small>Monitor & Protect</small></button>
+
+                <button class="ai-mode developer">👨‍💻<b>Developer</b><small>Code & Build</small></button>
+
+                <button class="ai-mode more">＋<b>More</b><small>All Modes</small></button>
+
+            </div>
+
+            <div class="ai-panels">
+
+                <div class="ai-panel intelligence">
+                    <div class="panel-title">
+                        <h2>🌍 GLOBAL INTELLIGENCE</h2>
+                        <span class="live">LIVE</span>
+                    </div>
+
+                    <div class="world-placeholder">
+                        🌐
+                        <strong>GLOBAL DATA NETWORK</strong>
+                        <span>Multiple intelligence sources ready</span>
+                    </div>
+
+                    <div class="stats-row">
+                        <div><b>195</b><small>Countries</small></div>
+                        <div><b>12.4M</b><small>Data Sources</small></div>
+                        <div><b>86</b><small>AI Agents</small></div>
+                        <div><b>2.1M</b><small>Tasks</small></div>
+                        <div><b>99.9%</b><small>Uptime</small></div>
+                    </div>
+                </div>
+
+                <div class="ai-panel system-status">
+                    <div class="panel-title">
+                        <h2>NETWORK & SYSTEM STATUS</h2>
+                        <span class="online">● All Systems Online</span>
+                    </div>
+
+                    <div class="status-grid">
+                        <div>🌐<b>Internet</b><span>Connected</span></div>
+                        <div>🔌<b>Global APIs</b><span>Connected</span></div>
+                        <div>🖥️<b>Servers</b><span>Online</span></div>
+                        <div>🗄️<b>Supabase</b><span>Connected</span></div>
+                        <div>☁️<b>Cloud</b><span>Connected</span></div>
+                        <div>📱<b>Devices</b><span>Connected</span></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="ai-lower-grid">
+
+                <div class="ai-panel command-center">
+                    <h2>🤖 AI COMMAND CENTER</h2>
+
+                    <div id="aiResponse">
+                        <b>Rauhco AI</b>
+                        <p>I can research, analyze, create, control and automate.</p>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button>Research</button>
+                        <button>Analyze</button>
+                        <button>Create Report</button>
+                        <button>Find Suppliers</button>
+                        <button>Compare Prices</button>
+                    </div>
+                </div>
+
+                <div class="ai-panel agents">
+                    <h2>🧠 AI AGENTS</h2>
+
+                    <div class="agent-row">🔎 Research AI <span>● Active</span></div>
+                    <div class="agent-row">💻 Coding AI <span>● Active</span></div>
+                    <div class="agent-row">💼 Business AI <span>● Active</span></div>
+                    <div class="agent-row">📊 Data AI <span>● Active</span></div>
+                    <div class="agent-row">🛡️ Security AI <span>● Active</span></div>
+                    <div class="agent-row">🎨 Creative AI <span>● Active</span></div>
+                </div>
+
+                <div class="ai-panel trends">
+                    <h2>📈 MARKET TRENDS</h2>
+
+                    <div>Clothing Market <strong>+6.2%</strong></div>
+                    <div>Equipment Market <strong>+4.8%</strong></div>
+                    <div>Housing Market <strong>+3.1%</strong></div>
+                    <div>Export Opportunities <strong>+8.7%</strong></div>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+</section>
+<!-- END RAUHCO AI GLOBAL CONTROL CENTER -->
   <footer>
     <p>© 2026 Rauhco Business Network. All rights reserved.</p>
     <p style="margin-top:8px;">
@@ -1084,7 +1708,86 @@ alert("JavaScript is running!");
         alert("Business profile saved successfully!");
 
     });
+// ===============================
+// RAUHCO AI COMMAND CENTER
+// ===============================
 
+const aiCommandInput = document.getElementById("aiCommandInput");
+const aiSendBtn = document.getElementById("aiSendBtn");
+const aiResponse = document.getElementById("aiResponse");
+
+function rauhcoAI(command) {
+    const text = command.toLowerCase().trim();
+
+    if (!text) {
+        return "Please enter a command or question.";
+    }
+
+    if (text.includes("hello") || text.includes("hi")) {
+        return "Hello! Rauhco AI is online and ready to assist you.";
+    }
+
+    if (text.includes("business")) {
+        return "Business Mode activated. I can help organize business information, services, customers, products and growth plans.";
+    }
+
+    if (text.includes("research")) {
+        return "Research Mode activated. I can prepare a research task and organize the information you provide.";
+    }
+
+    if (text.includes("analyze") || text.includes("analysis")) {
+        return "Analysis Mode activated. Send me the data, numbers or information you want analyzed.";
+    }
+
+    if (text.includes("report")) {
+        return "Report Mode activated. I can help structure a professional report from your information.";
+    }
+
+    if (text.includes("finance") || text.includes("money")) {
+        return "Finance Mode activated. I can help organize financial information, calculations, budgets and reports.";
+    }
+
+    if (text.includes("website")) {
+        return "Website Mode activated. I can help plan, debug and improve the Rauhco Business Network website.";
+    }
+
+    if (text.includes("security")) {
+        return "Security Mode activated. I can help identify common website security issues and protection steps.";
+    }
+
+    if (text.includes("database")) {
+        return "Database Mode activated. I can help organize Supabase tables, records and database operations.";
+    }
+
+    if (text.includes("help")) {
+        return "Rauhco AI can assist with Research, Analysis, Business, Finance, Database, Website, Security, Reports and other tasks.";
+    }
+
+    return "Rauhco AI received your command: \"" + command + "\". Your command center is working. Full AI processing can be connected next.";
+}
+
+if (aiSendBtn && aiCommandInput && aiResponse) {
+
+    aiSendBtn.addEventListener("click", function () {
+
+        const command = aiCommandInput.value;
+
+        aiResponse.innerHTML =
+            "<b>Rauhco AI</b><p>" +
+            rauhcoAI(command) +
+            "</p>";
+
+        aiCommandInput.value = "";
+    });
+
+    aiCommandInput.addEventListener("keydown", function (event) {
+
+        if (event.key === "Enter") {
+            aiSendBtn.click();
+        }
+
+    });
+    }
   </script>
 
 </body>
