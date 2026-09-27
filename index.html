@@ -1772,10 +1772,14 @@ if (aiSendBtn && aiCommandInput && aiResponse) {
 
         const command = aiCommandInput.value;
 
-        aiResponse.innerHTML =
-            "<b>Rauhco AI</b><p>" +
-            rauhcoAI(command) +
-            "</p>";
+      const responseText = rauhcoAI(command);
+
+aiResponse.innerHTML =
+    "<b>Rauhco AI</b><p>" +
+    responseText +
+    "</p>";
+
+rauhcoSpeak(responseText);
 
         aiCommandInput.value = "";
     });
@@ -1787,6 +1791,112 @@ if (aiSendBtn && aiCommandInput && aiResponse) {
         }
 
     });
+    }
+  // ===============================
+// RAUHCO AI VOICE CONTROL
+// ===============================
+
+const aiVoiceBtn = document.createElement("button");
+
+aiVoiceBtn.id = "aiVoiceBtn";
+aiVoiceBtn.type = "button";
+aiVoiceBtn.innerHTML = "🎤 Voice";
+
+aiVoiceBtn.style.marginLeft = "8px";
+aiVoiceBtn.style.padding = "0 18px";
+aiVoiceBtn.style.border = "0";
+aiVoiceBtn.style.borderRadius = "10px";
+aiVoiceBtn.style.background = "#10b981";
+aiVoiceBtn.style.color = "white";
+aiVoiceBtn.style.fontWeight = "bold";
+aiVoiceBtn.style.cursor = "pointer";
+
+if (aiSendBtn && aiCommandInput) {
+    aiSendBtn.parentNode.insertBefore(
+        aiVoiceBtn,
+        aiSendBtn.nextSibling
+    );
+}
+
+// Voice recognition
+const SpeechRecognition =
+    window.SpeechRecognition ||
+    window.webkitSpeechRecognition;
+
+if (SpeechRecognition) {
+
+    const recognition = new SpeechRecognition();
+
+    recognition.lang = "en-US";
+    recognition.continuous = false;
+    recognition.interimResults = false;
+
+    aiVoiceBtn.addEventListener("click", function () {
+
+        aiVoiceBtn.innerHTML = "🔴 Listening...";
+        aiVoiceBtn.style.background = "#dc2626";
+
+        recognition.start();
+    });
+
+    recognition.onresult = function (event) {
+
+        const spokenText =
+            event.results[0][0].transcript;
+
+        aiCommandInput.value = spokenText;
+
+        aiSendBtn.click();
+
+        aiVoiceBtn.innerHTML = "🎤 Voice";
+        aiVoiceBtn.style.background = "#10b981";
+    };
+
+    recognition.onerror = function () {
+
+        aiVoiceBtn.innerHTML = "🎤 Voice";
+        aiVoiceBtn.style.background = "#10b981";
+    };
+
+    recognition.onend = function () {
+
+        aiVoiceBtn.innerHTML = "🎤 Voice";
+        aiVoiceBtn.style.background = "#10b981";
+    };
+
+} else {
+
+    aiVoiceBtn.addEventListener("click", function () {
+
+        alert(
+            "Voice recognition is not supported by this browser."
+        );
+
+    });
+
+}
+
+
+// ===============================
+// RAUHCO AI SPEAKS THE RESPONSE
+// ===============================
+
+function rauhcoSpeak(text) {
+
+    if (!("speechSynthesis" in window)) {
+        return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const speech =
+        new SpeechSynthesisUtterance(text);
+
+    speech.lang = "en-US";
+    speech.rate = 1;
+    speech.pitch = 1;
+
+    window.speechSynthesis.speak(speech);
     }
   </script>
 
