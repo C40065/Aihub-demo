@@ -1896,6 +1896,296 @@ function rauhcoSpeak(text) {
     }
   </script>
 
+<script>
+/* NEW SAFE RAUHCO AI CONTROLLER */
+
+(function () {
+    "use strict";
+
+    function startRauhcoController() {
+
+        const input = document.getElementById("aiCommandInput");
+        const send = document.getElementById("aiSendBtn");
+        const voice = document.getElementById("aiVoiceBtn");
+        const response = document.getElementById("aiResponse");
+
+        if (!input || !send || !response) {
+            console.log("Rauhco AI: required elements not found.");
+            return;
+        }
+
+        function show(message) {
+            response.textContent = message;
+            response.style.display = "block";
+        }
+
+        function processCommand() {
+
+            const command = input.value.trim();
+
+            if (!command) {
+                show("Please enter a command first.");
+                input.focus();
+                return;
+            }
+
+            const text = command.toLowerCase();
+
+            if (
+                text.includes("hello") ||
+                text.includes("hi") ||
+                text.includes("hey")
+            ) {
+                show(
+                    "Hello! Rauhco AI is online and ready to assist you."
+                );
+                return;
+            }
+
+            if (text.includes("research")) {
+                show(
+                    "Research Mode activated. Your research request has been received."
+                );
+                return;
+            }
+
+            if (text.includes("business")) {
+                show(
+                    "Business Mode activated. I can help organize business information, customers, products and services."
+                );
+                return;
+            }
+
+            if (
+                text.includes("finance") ||
+                text.includes("money") ||
+                text.includes("budget")
+            ) {
+                show(
+                    "Finance Mode activated. Your financial request has been received."
+                );
+                return;
+            }
+
+            if (
+                text.includes("website") ||
+                text.includes("web")
+            ) {
+                show(
+                    "Website Mode activated. Your website request has been received."
+                );
+                return;
+            }
+
+            if (
+                text.includes("database") ||
+                text.includes("data")
+            ) {
+                show(
+                    "Database Mode activated. Your data request has been received."
+                );
+                return;
+            }
+
+            if (
+                text.includes("security")
+            ) {
+                show(
+                    "Security Mode activated. Your security request has been received."
+                );
+                return;
+            }
+
+            if (
+                text.includes("developer") ||
+                text.includes("coding") ||
+                text.includes("code")
+            ) {
+                show(
+                    "Developer Mode activated. Your coding request has been received."
+                );
+                return;
+            }
+
+            if (text.includes("creative")) {
+                show(
+                    "Creative Mode activated. Your creative request has been received."
+                );
+                return;
+            }
+
+            if (
+                text.includes("help") ||
+                text.includes("what can you do")
+            ) {
+                show(
+                    "Rauhco AI is ready. Try Research, Business, Finance, Website, Database, Security, Developer or Creative."
+                );
+                return;
+            }
+
+            show(
+                "Rauhco AI received your command: " + command
+            );
+        }
+
+        /* SEND BUTTON */
+
+        send.addEventListener("click", function (event) {
+
+            event.preventDefault();
+            event.stopImmediatePropagation();
+
+            processCommand();
+
+        }, true);
+
+
+        /* ENTER KEY */
+
+        input.addEventListener("keydown", function (event) {
+
+            if (event.key === "Enter") {
+
+                event.preventDefault();
+
+                processCommand();
+            }
+
+        }, true);
+
+
+        /* VOICE BUTTON */
+
+        if (voice) {
+
+            voice.addEventListener("click", function (event) {
+
+                event.preventDefault();
+                event.stopImmediatePropagation();
+
+                const SpeechRecognition =
+                    window.SpeechRecognition ||
+                    window.webkitSpeechRecognition;
+
+                if (!SpeechRecognition) {
+
+                    show(
+                        "Voice recognition is not supported by this browser."
+                    );
+
+                    return;
+                }
+
+                const recognition =
+                    new SpeechRecognition();
+
+                recognition.lang = "en-US";
+                recognition.continuous = false;
+                recognition.interimResults = false;
+
+                show("Listening... Please speak.");
+
+                recognition.onresult = function (event) {
+
+                    const spoken =
+                        event.results[0][0].transcript;
+
+                    input.value = spoken;
+
+                    processCommand();
+                };
+
+                recognition.onerror = function () {
+
+                    show(
+                        "Voice recognition could not start. Please try again."
+                    );
+                };
+
+                try {
+
+                    recognition.start();
+
+                } catch (error) {
+
+                    show(
+                        "Voice recognition is currently unavailable."
+                    );
+                }
+
+            }, true);
+        }
+
+
+        /* AI MODE BUTTONS */
+
+        document.addEventListener("click", function (event) {
+
+            const button =
+                event.target.closest("button");
+
+            if (!button) return;
+
+            if (
+                button === send ||
+                button === voice
+            ) {
+                return;
+            }
+
+            const name =
+                button.textContent.trim();
+
+            const modes = [
+                "Assistant",
+                "Research",
+                "Deep Research",
+                "Agent Mode",
+                "Computer",
+                "Business",
+                "Database",
+                "Website",
+                "Communication",
+                "Creative",
+                "Security",
+                "Developer",
+                "Finance"
+            ];
+
+            for (const mode of modes) {
+
+                if (
+                    name.toLowerCase()
+                        .includes(mode.toLowerCase())
+                ) {
+
+                    window.rauhcoSelectedMode = mode;
+
+                    show(
+                        mode +
+                        " selected. Enter your command above and press Send."
+                    );
+
+                    return;
+                }
+            }
+
+        }, true);
+
+
+        console.log(
+            "Rauhco AI Safe Controller is ONLINE."
+        );
+    }
+
+
+    startRauhcoController();
+
+})();
+
+</script>
+
 </body>
 </html>
 
