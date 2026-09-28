@@ -1645,11 +1645,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const businessProfileForm =
         document.getElementById("businessProfileForm");
 
-    if (!businessProfileForm) {
-        console.error("businessProfileForm was not found.");
-        return;
+    alert("JavaScript is running!");
+
+if (!businessProfileForm) {
+    console.error("businessProfileForm was not found.");
+    return;
     }
-alert("JavaScript is running!");
     businessProfileForm.addEventListener("submit", async function (e) {
 
         e.preventDefault();
