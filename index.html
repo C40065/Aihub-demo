@@ -1576,9 +1576,10 @@ const password = inputs[5].value;
 document.getElementById("loginForm").addEventListener("submit", async function(e) {
     e.preventDefault();
 
-    const inputs = this.querySelectorAll("input");
-    const email = inputs[0].value;
-    const password = inputs[1].value;
+    alert("Login button reached!");
+
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value;
 
     const { data, error } = await supabaseClient.auth.signInWithPassword({
         email: email,
